@@ -11,16 +11,35 @@ h1{
 p{  
     font-size: 14px;
     line-height: 140%;
+    text-indent: 25px;
+    text-align: justify;
+    /* padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px; */
+
+
+    padding: 20px 40px;
+    background-color: antiquewhite;
+    margin-top: 30px;
+    /* margin-left: 40px;
+    margin-right: 40px; */
+
+    width: 70%;
+    margin: auto;
+
 }
 
 img{
-    width: 100vw;
+    width: 100%;
+    box-sizing: content-box;
 }
 span{
     color: #222;
     font-size: 0.9em;
     display: block;
     text-align: center;
+
 }
 
 /* class selector */
@@ -28,12 +47,14 @@ span{
     font-weight: bold; 
     display: inline;
     color: red;
+    text-transform: uppercase;
 }
 
 
 /* id selector */
 #cold{
     color: darkcyan;
+    text-transform: capitalize;
 }
 
 #cold::first-letter{
