@@ -1,0 +1,48 @@
+/* universal selector */
+*{
+    font-family: Arial;
+
+}
+
+
+h1{
+    font-family: sans-serif;
+}
+p{  
+    font-size: 14px;
+    line-height: 140%;
+}
+
+img{
+    width: 100vw;
+}
+span{
+    color: #222;
+    font-size: 0.9em;
+    display: block;
+    text-align: center;
+}
+
+/* class selector */
+.name{
+    font-weight: bold; 
+    display: inline;
+    color: red;
+}
+
+
+/* id selector */
+#cold{
+    color: darkcyan;
+}
+
+#cold::first-letter{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3.5rem;
+    color: lightblue;
+    text-shadow: 2px 2px 2px gray;
+}
+
+#cold:hover{
+    color: pink;
+}
