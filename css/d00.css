@@ -1,0 +1,25 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: content-box;
+    padding: 0;
+
+}
+
+
+a{
+    text-decoration: none;
+    padding: 5px 20px;
+    color: antiquewhite;
+    display: inline-block;
+    font-weight: bolder;
+}
+
+a:hover{
+    color: lightsalmon;
+    background-color: beige;
+    border-top-right-radius: 50%;
+}
+
+#menu{
+    background-color: lightseagreen;
+}
