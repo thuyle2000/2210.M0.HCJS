@@ -1,0 +1,54 @@
+/* khai bao css cho trang d05 */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    margin-top: 10px;
+    background-color: antiquewhite;
+
+    width: 90vw;
+    margin: auto;
+}
+
+.hinh-logo {
+    width: 20%;
+}
+
+footer {
+    background-color: beige;
+    text-align: center;
+    padding: 15px;
+    border-top: medium groove lemonchiffon;
+}
+
+ul.menubar {
+    list-style-type: none;
+    padding: 0;
+    /* background-color: green; */
+}
+
+ul.menubar>li {
+    display: inline-block;
+    padding: 5px 30px 5px 30px;
+    text-align: center;
+    margin-left: -5px;
+    background-color: green;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+}
+
+ul.menubar>li>a {
+    text-decoration: none;
+    color: bisque;
+    
+}
+ul.menubar>li{
+    transition-property: 'color';
+    transition-duration: 1s;
+}
+ul.menubar>li:hover{
+    /* font-weight: bolder; */
+    background-color: orangered;
+}
