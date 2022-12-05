@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+
+            animation-name: funny;
+            animation-duration: 5s;
+            /* animation-direction: alternate; */
+            animation-iteration-count: infinite;
+
+            position:relative;
+            
+        }
+
+        @keyframes funny {
+            0%{
+                background-color: red;
+                /* transform: translateX(0);
+                transform: translateY(0); */
+                top: 0px;
+                left:0px;
+            }
+            25%{
+                background-color: green;
+                /* transform: translateX(300px);
+                transform: translateY(0); */
+                top: 0px;
+                left:300px;
+            }
+            50%{
+                background-color: yellow;
+                top: 300px;
+                left:300px;
+            }
+            75%{
+                background-color: orange;
+                top: 300px;
+                left:0px;
+            }
+            100%{
+                background-color: red;
+                top: 0px;
+                left:0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS Animation Demo </h2>
+    <hr>
+    <div></div>
+</body>
+</html>

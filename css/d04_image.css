@@ -9,17 +9,36 @@ body{
 }
 
 img{
-    width: 50%;
-    float: right;
-    padding-left: 20px;
     padding-bottom: 10px;
 }
 
-img.hinh{
-    float: left;
-    padding-left: 0px;
-    padding-right: 20px;
+img:hover{
+    box-shadow: 3px 2px 2px gray;
 }
+
+img.hinh_trai{
+    float: left;
+    padding-right: 20px;
+    width: 50%;
+}
+img.hinh_phai{
+    float: right;
+    padding-left: 20px;
+    width: 50%;
+}
+
+img.title{
+    width: 25%;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: none;
+}
+
+img.title:hover{
+    transform: rotateZ(90deg);
+}
+
+
 
 div{
     clear: both;
