@@ -1,0 +1,73 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form div{
+    margin: 5px;
+    padding: 5px;
+}
+
+label{
+    display: inline-block;
+    width: 10rem;
+    font-size: 1rem;
+    color: darkgreen;
+}
+
+input, select, textarea
+{
+    font-size: 1rem;
+    padding: 5px 10px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=date],
+textarea
+{
+    width: 200px;
+    color: brown;
+}
+
+input:required{
+    background-color: lightcyan;
+    border: none;
+    border-bottom: medium solid salmon;
+    border-right: thin dotted salmon;
+    color: gray;
+}
+select{
+    width: 223px;
+}
+
+label.comment{
+    vertical-align: top;
+}
+
+input[type=submit],
+input[type=reset]{
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 3px 3px 3px gainsboro;
+    color: antiquewhite;
+    font-weight: bold;
+}
+
+input[type=submit]{
+    background-color: red;
+}
+
+input[type=reset]{
+    background-color: green;
+}
+
+div.form{
+    padding: 5px 30px;
+    width: max-content;
+    border: thin solid gainsboro;
+    box-shadow: 3px 3px 3px gray;
+
+}
