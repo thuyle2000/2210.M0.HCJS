@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oparators</title>
+</head>
+<body>
+    <h2>Operator javascript</h2>
+    <hr>
+    <p id="p_kq1"></p>
+    <p id="p_kq2"></p>
+    <script>
+        var v1 = 120;
+        var v2 = "120";
+        var kq1 = (v1==v2);
+        var kq2 = (v1===v2);
+
+        document.getElementById("p_kq1").innerHTML=`${v1}=="${v2}" => ${kq1}`;
+
+        document.getElementById("p_kq2").innerHTML=`${v1}==="${v2}" => ${kq2}`;
+
+    </script>
+</body>
+</html>
