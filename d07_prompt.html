@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt</title>
+</head>
+<body>
+    <h2>prompt() javascript</h2>
+    <hr>
+    <input type="button" value="input your name" id="btn_input">
+    <p id="p_hello"></p>
+</body>
+<script>
+    //lap trinh cho su kien click button co id = [btn_input]
+    document.getElementById("btn_input").onclick = function(){
+        var name = prompt("what your name ?","no name");
+
+        //dua noi dung cua bien [name] vo paragraph co id=[p_hello]
+        if(name != null){
+            // document.getElementById("p_hello").innerHTML="Hello, " + name +" !";
+
+            document.getElementById("p_hello").innerHTML=`Hello, <b>${name}</b> !`;
+        }
+
+    }
+</script>
+</html

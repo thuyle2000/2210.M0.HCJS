@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confirm</title>
+</head>
+<body>
+    <h2>confirm() javascript</h2>
+    <hr>
+    <input type="button" value="close window" id="btn_close">
+</body>
+<script>
+    //lap trinh cho su kien click button co id = [btn_close]
+    document.getElementById("btn_close").onclick = function(){
+        var answer = confirm("are u sure ?");
+        if(answer == true){
+            //dong cua so trinh duyet dang hien thi trang web
+            window.close();
+        }
+    }
+</script>
+</html>
