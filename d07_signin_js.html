@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-in</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h2>HTML Form - javascript</h2>
+    <hr>
+    <div class="form">
+        <form action="d05_table_css.html" id="form-login">
+            <div>
+                <legend>Sign-in</legend>
+            </div>
+
+            <div>
+                <label for="">Username* </label>
+                <input type="text" name="userid" id="account_id" required placeholder="nhap tai khoan"
+                    pattern="aptech|admin|guest" value="guest" autofocus>
+            </div>
+
+            <div>
+                <label for="">Password* </label>
+                <input type="password" name="Password" id="password" required placeholder="nhap mat khau">
+            </div>
+
+            <div>
+                <label for="">Email: </label>
+                <input type="email" name="email" id="email" placeholder="nhap dia chi email" value="guest@gmail.com">
+            </div>
+
+            <div>
+
+                <input type="checkbox" name="remember" id="remember" title="ghi nho mat khau" value="true" checked>
+                Remember Password
+            </div>
+
+
+            <div>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    //lap trinh tren su kien submit cua form co id=[form-login]
+    //de kiem tra tk dang nhap co hop le ko ?
+    document.getElementById("form-login").onsubmit=function(){
+        //lay du lieu nhap trong o username co id =[account_id]
+        var uid = document.getElementById("account_id").value;
+
+        //lay du lieu nhap trong mat khau co id = [password]
+        var pass = document.getElementById("password").value;
+
+
+        if(uid=="admin" || uid=="aptech"){
+            if(pass!="123"){
+                alert("Wrong password ! plz retry !");
+                return false; // ko chuyen trang action
+            }
+        }
+        else if(uid=="guest"){
+            if(pass !="abc"){
+                alert("Wrong password for guest ! plz retry !");
+                return false; // ko chuyen trang action
+            }
+        }
+        else{
+            alert("Wrong account ! plz retry !");
+            return false; // ko chuyen trang action
+        }
+    }
+</script>
+
+</html>
