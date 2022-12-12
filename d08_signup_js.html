@@ -37,17 +37,17 @@
 
             <div>
                 <label for="">gender</label>
-                <input type="radio" name="gender" id="gender_male" checked value="nam"> male
-                <input type="radio" name="gender" id="gender_female" value="nu"> female
+                <input type="radio" name="gender" id="gender_male" checked value="male"> male
+                <input type="radio" name="gender" id="gender_female" value="female"> female
             </div>
 
             <div>
                 <label for="">languages </label>
-                <input type="checkbox" name="lan" id="lan-en" value="English" checked> EN -
+                <input type="checkbox" name="lan" id="lan-en" value="English" checked class="slan"> EN -
 
-                <input type="checkbox" name="lan" id="lan-fr" value="French">FR -
+                <input type="checkbox" name="lan" id="lan-fr" value="French" class="slan">FR -
 
-                <input type="checkbox" name="lan" id="lan-jp" value="Japanese" checked>JP
+                <input type="checkbox" name="lan" id="lan-jp" value="Japanese" checked class="slan">JP
             </div>
 
             <div>
@@ -115,9 +115,9 @@
             let p1 = document.getElementById("password").value.trim();
             // - lay du lieu nhap trong o password2
             let p2 = document.getElementById("password2").value.trim();
-            
+
             //kiem tra chieu dai cua password
-            if(p1.length<3 || p1.length>10){
+            if (p1.length < 3 || p1.length > 10) {
                 //password it hon 3 ky tu hoac nhieu hon 10 kt -> bao loi
                 alert("password must be from 3-10 characters ! plz retry !");
                 document.getElementById("password").focus();
@@ -125,12 +125,35 @@
             }
 
             // - kiem tra p1 co giong p2 ko ?
-            if(p1!=p2){
+            if (p1 != p2) {
                 //password nhap lai ko giong password -> bao loi
                 alert("password confirm is different from password ! plz retry !");
                 document.getElementById("password2").focus();
                 return false; // ko cho chuyen trang action
             }
+
+
+            // lay gia tri nhap trong o email
+            let email = document.getElementById("email").value.trim();
+            // luu noi dung cua bien eamil vo cuoi mang a[]
+            a.push(email);
+
+
+            //lay gia tri duoc chon trong nhom radio button [gender]
+            let gender = document.querySelector('input[name="gender"]:checked').value;
+            // luu noi dung cua bien gender vo cuoi mang a[]
+            a.push(gender);
+
+
+            //lay cac gia tri duoc chon trong nhom checkbox language
+            let checkedLan = "";
+            var checkboxes = document.querySelectorAll('input[name="lan"]:checked');
+            for (var c of checkboxes) {
+                checkedLan += (c.value + ' ');
+            }
+
+            // luu noi dung cua bien checkedLan vo cuoi mang a[]
+            a.push(checkedLan);
 
 
             //xuat len man hinh, noi dung cua mang a[]
