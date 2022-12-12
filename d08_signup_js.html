@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h3>HTML Form </h3>
+    <div class="form">
+        <h4>Sign Up</h4>
+        <form action="d06_signin_validate.html" name="formSignup" id="formSignup" method="get">
+
+            <div>
+                <label for="">username </label>
+                <input type="text" name="user" id="user" required value="guest">
+            </div>
+
+            <div>
+                <label for="">password </label>
+                <input type="password" name="password" id="password" required value="123">
+            </div>
+
+            <div>
+                <label for="">password confirm</label>
+                <input type="password" name="password2" id="password2" required value="123">
+            </div>
+
+            <div>
+                <label for="">email</label>
+                <input type="email" name="email" id="email" value="guest@gmail.com">
+            </div>
+
+            <div>
+                <label for="">gender</label>
+                <input type="radio" name="gender" id="gender_male" checked value="nam"> male
+                <input type="radio" name="gender" id="gender_female" value="nu"> female
+            </div>
+
+            <div>
+                <label for="">languages </label>
+                <input type="checkbox" name="lan" id="lan-en" value="English" checked> EN -
+
+                <input type="checkbox" name="lan" id="lan-fr" value="French">FR -
+
+                <input type="checkbox" name="lan" id="lan-jp" value="Japanese" checked>JP
+            </div>
+
+            <div>
+                <label for="">location</label>
+                <select name="location" id="location" required>
+                    <option value=""> -- select a city -- </option>
+                    <option value="SG">Saigon</option>
+                    <option value="HN">Ha noi</option>
+                    <option value="DN">Da nang</option>
+                    <option value="HU" selected>Hue</option>
+                    <option value="CT">Can tho</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="">birthday</label>
+                <input type="date" name="dob" id="dob" value="2001-12-24">
+            </div>
+
+            <div>
+                <label for="">level</label>
+                <input type="number" name="level" id="level" min="1" max="10" value="5"> <br>
+                <!-- <input type="range" name="rlevel" id="rlevel" min="1" max="10" value="5"> -->
+
+            </div>
+
+            <div>
+                <label for="" class="comment">comment</label>
+                <textarea name="comment" id="comment" rows="4"></textarea>
+            </div>
+
+            <div>
+                <input type="submit" value="submit">
+                <input type="reset" value="reset">
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        //lap trinh cho su kien submit cua form dang ky
+        document.getElementById("formSignup").onsubmit = function () {
+            //tao bien array [a] chua cac du lieu nhap
+            let a = ["Your Information"];
+
+            //lay du lieu nhap trong o [username] luu vo bien uid
+            let uid = document.getElementById("user").value.trim();
+
+            //kiem tra [username] co dung qui tac sau hay ko:
+            // - chi chua ky tu chu cai a-zA-Z, ky tu so 0-9 hoac dau _
+            // - co do dai tu 3->10
+            let r = /^\w{3,10}$/;
+            if (r.test(uid) == false) {
+                //chuoi nhap lieu ko dung theo yc -> bao loi
+                alert("invalid username ! plz retry !");
+                document.getElementById("user").focus();
+                return false; // ko cho chuyen trang action
+            }
+            //luu noi dung cua bien uid vo mang a[]
+            a.push(uid);
+
+
+            //lap trinh kiem tra password co giong password nhap lai?
+            // - lay du lieu nhap trong o password
+            let p1 = document.getElementById("password").value.trim();
+            // - lay du lieu nhap trong o password2
+            let p2 = document.getElementById("password2").value.trim();
+            
+            //kiem tra chieu dai cua password
+            if(p1.length<3 || p1.length>10){
+                //password it hon 3 ky tu hoac nhieu hon 10 kt -> bao loi
+                alert("password must be from 3-10 characters ! plz retry !");
+                document.getElementById("password").focus();
+                return false; // ko cho chuyen trang action
+            }
+
+            // - kiem tra p1 co giong p2 ko ?
+            if(p1!=p2){
+                //password nhap lai ko giong password -> bao loi
+                alert("password confirm is different from password ! plz retry !");
+                document.getElementById("password2").focus();
+                return false; // ko cho chuyen trang action
+            }
+
+
+            //xuat len man hinh, noi dung cua mang a[]
+            alert(a.join("\n"));
+        }
+    </script>
+
+</body>
+
+</html>
