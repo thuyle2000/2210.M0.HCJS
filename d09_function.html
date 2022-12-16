@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <h2>Javascript Function()</h2>
+    <hr>
+
+    <label for="">Nhap ngay sinh nhat</label>
+    <input type="date" name="dob" id="dob" value="2001-12-04">
+    <input type="button" value="Tinh tuoi" id="btClick" onclick=getAge() >
+
+    <script>
+        function getAge(){
+            //doc gia tri nhap trong o ngay sinh nhat, co id = [dob]
+            let ngaysn = document.getElementById("dob").value;
+            let dob = new String(ngaysn);
+            console.log(`ngay sn = ${ngaysn}`);
+
+            let yob =  dob.substring(0,4);
+            console.log(`nam sinh = [${yob}]`);
+
+            let age = 2022 - yob;
+            console.log(`tuoi = ${age}`);
+
+            alert(`Nam nay, ban ${age} tuoi !`);
+        }
+    </script>
+</body>
+
+</html>

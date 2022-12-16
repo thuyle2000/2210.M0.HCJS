@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <h2>Javascript Object</h2>
+    <hr>
+    <p id="student"></p>
+    <p id="employee"></p>
+
+    <script>
+        //tao 1 doi tuong sinh vien, bao gom cac thuoc tinh:id, name, mark
+        //direct method
+        let sv = new Object();
+        sv.id="student1234";
+        sv.name="nguyen anh duy";
+        sv.mark = 81;
+        sv.toString = function(){
+            return `Sinh Vien: id=${this.id}, ten=${this.name}, diem=${this.mark}`;
+        }
+        
+        document.getElementById("student").innerHTML = sv;
+
+        //tao 1 doi tuong nhan vien, bao gom cac thuoc tinh:id, name, salary
+        //template method
+        //1. tao constructor
+        function Employee(ms, ten, luongcb){
+            this.id=ms;
+            this.name=ten;
+            this.salary=luongcb;
+
+            this.toString = function(){
+                return `Nhan vien: id=${this.id}, ten=${this.name}, luong=${this.salary}`;
+            }
+        }
+        //2. tao bien doi tuong nv
+        let nv = new Employee('NV001', 'Hoang Khang', 12000)
+        
+        document.getElementById("employee").innerHTML = nv;
+
+    </script>
+</body>
+</html>
