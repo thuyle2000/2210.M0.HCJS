@@ -20,7 +20,7 @@
         sv.name="nguyen anh duy";
         sv.mark = 81;
         sv.toString = function(){
-            return `Sinh Vien: id=${this.id}, ten=${this.name}, diem=${this.mark}`;
+            return `Sinh Vien: id=${this.id}, ten=${this.name.toUpperCase()}, diem=${this.mark}`;
         }
         
         document.getElementById("student").innerHTML = sv;
@@ -34,10 +34,10 @@
             this.salary=luongcb;
 
             this.toString = function(){
-                return `Nhan vien: id=${this.id}, ten=${this.name}, luong=${this.salary}`;
+                return `Nhan vien: id=${this.id}, ten=${this.name.toUpperCase()}, luong=${this.salary}`;
             }
         }
-        //2. tao bien doi tuong nv
+        //2. tao bien doi tuong nv, co kieu Employee 
         let nv = new Employee('NV001', 'Hoang Khang', 12000)
         
         document.getElementById("employee").innerHTML = nv;
