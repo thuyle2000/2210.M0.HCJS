@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drap-drop</title>
+    <style>
+        #d1,#d2{
+            width: 300px;
+            height: 150px;
+            background-color: antiquewhite;
+            box-shadow: 3px 3px 3px gray;
+            margin: 20px;
+        }
+        img{
+            margin: 10px;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Drap & drop</h2>
+    <hr>
+    <div id="d1" ondragover="allowDrop(event)"  ondrop="drop(event)" ></div>
+    <div id="d2" ondragover="allowDrop(event)"  ondrop="drop(event)" >
+        <img src="images/wc2022.jpg" draggable="true" id="logo_wc" ondragstart="drap(event)">
+    </div>
+</body>
+<script>
+    function drap(e){
+        //lay id cua doi tuong dang keo (drap) luu vo thuoc tinh 'text' cua dataTransfer
+        e.dataTransfer.setData("text", e.target.id);
+    }
+
+    function allowDrop(e){
+        //huy chuc nang mac dinh cua event drop
+        e.preventDefault();
+    }
+
+    function drop(e){
+        e.preventDefault();
+        let pic_id = e.dataTransfer.getData("text");
+        e.target.appendChild(document.getElementById(pic_id));
+    }
+</script>
+</html>
